@@ -1,0 +1,31 @@
+Task 1 simple threads execution time: 1 Matrix size: 3 Number of threads: 4
+Task 2 simple threads execution time: 1 Matrix size: 3 Number of threads: 4
+Task 3 simple threads execution time: 0 Matrix size: 3 Number of threads: 4
+
+
+Task 1 Thread Pool execution time: 1 Matrix size: 3 Number of threads: 4
+Task 2 Thread Pool execution time: 0 Matrix size: 3 Number of threads: 4
+Task 3 Thread Pool execution time: 1 Matrix size: 3 Number of threads: 4
+
+>>> This was a singular attempt on very large numbers
+Task 1 simple threads execution time: 354826 Matrix size: 10000 Number of threads: 16
+>>>
+
+Task 1 simple threads execution time: 69 Matrix size: 1000 Number of threads: 16
+Task 2 simple threads execution time: 842 Matrix size: 1000 Number of threads: 16
+Task 3 simple threads execution time: 871 Matrix size: 1000 Number of threads: 16
+
+
+Task 1 Thread Pool execution time: 7 Matrix size: 1000 Number of threads: 16
+Task 2 Thread Pool execution time: 90 Matrix size: 1000 Number of threads: 16
+Task 3 Thread Pool execution time: 162 Matrix size: 1000 Number of threads: 16
+
+
+Task 1 simple threads execution time: 73 Matrix size: 1000 Number of threads: 16
+Task 2 simple threads execution time: 895 Matrix size: 1000 Number of threads: 16
+Task 3 simple threads execution time: 872 Matrix size: 1000 Number of threads: 16
+
+
+Task 1 Thread Pool execution time: 9 Matrix size: 1000 Number of threads: 16
+Task 2 Thread Pool execution time: 122 Matrix size: 1000 Number of threads: 16
+Task 3 Thread Pool execution time: 164 Matrix size: 1000 Number of threads: 16

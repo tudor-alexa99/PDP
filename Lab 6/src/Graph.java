@@ -21,7 +21,7 @@ class Graph {
         this.numberOfEdges = numberOfEdges;
         this.graph = graph;
     }
-
+//
     void readGraph() throws FileNotFoundException {
         File file = new File(this.fileName);
         Scanner scanner = new Scanner(file);

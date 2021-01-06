@@ -35,7 +35,7 @@ public class Main {
         controllerB.backTracking(controllerB.getSolution(), 0, graphB.getNumberOfVertices());
         long endTime1 = System.currentTimeMillis();
 
-        // THREADS
+        //  THREADS
         Graph graphT = new Graph(fileName);
         graphT.readGraph();
 

@@ -23,7 +23,7 @@ class Controller  {
         }
 
         return false;
-    }
+    } //
 
     private boolean hasCycle(List<Integer> solution, int n) {
         int[][] G = graph.getGraph();

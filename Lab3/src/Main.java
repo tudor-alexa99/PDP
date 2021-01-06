@@ -3,7 +3,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
 //        Initialise the matrix
-        int totalThreads = 16;
+        int totalThreads = 8;
 
         int matrix_size = 1000;
         int[][] A = new int[matrix_size][matrix_size];

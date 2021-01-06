@@ -45,6 +45,7 @@ public class Program {
                 " Matrix size: " + size +
                 " Number of threads: " + totalThreads +
                 "\n");
+//        printTest(multiplyMatrix);
 
     }
 
@@ -73,6 +74,7 @@ public class Program {
                 " Matrix size: " + size +
                 " Number of threads: " + totalThreads +
                 "\n");
+//        printTest(multiplyMatrix);
 
     }
 
@@ -101,16 +103,20 @@ public class Program {
                 " Matrix size: " + size +
                 " Number of threads: " + totalThreads +
                 "\n");
+//        printTest(multiplyMatrix);
 
     }
 
 
     public void threadPoolTask1() throws IOException, InterruptedException {
         MultiplyMatrix multiplyMatrix = new MultiplyMatrix(size, totalThreads, A, B);
-        ExecutorService executorService = Executors.newFixedThreadPool(totalThreads);
+        ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
         long startingTime = System.currentTimeMillis();
-        executorService.execute(multiplyMatrix.task1);
+        for(int i = 0; i < totalThreads; i ++)
+            executorService.submit(multiplyMatrix.task1);
+
+
         executorService.shutdown();
         executorService.awaitTermination(1, TimeUnit.MINUTES);
         long endingTime = System.currentTimeMillis();
@@ -119,14 +125,18 @@ public class Program {
                 " Matrix size: " + size +
                 " Number of threads: " + totalThreads +
                 "\n");
+//        printTest(multiplyMatrix);
     }
 
     public void threadPoolTask2() throws IOException, InterruptedException {
         MultiplyMatrix multiplyMatrix = new MultiplyMatrix(size, totalThreads, A, B);
-        ExecutorService executorService = Executors.newFixedThreadPool(totalThreads);
+        ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
         long startingTime = System.currentTimeMillis();
-        executorService.execute(multiplyMatrix.task2);
+        for(int i = 0; i < totalThreads; i ++)
+            executorService.submit(multiplyMatrix.task2);
+
+
         executorService.shutdown();
         executorService.awaitTermination(1, TimeUnit.MINUTES);
         long endingTime = System.currentTimeMillis();
@@ -135,14 +145,18 @@ public class Program {
                 " Matrix size: " + size +
                 " Number of threads: " + totalThreads +
                 "\n");
+//        printTest(multiplyMatrix);
     }
 
     public void threadPoolTask3() throws IOException, InterruptedException {
         MultiplyMatrix multiplyMatrix = new MultiplyMatrix(size, totalThreads, A, B);
-        ExecutorService executorService = Executors.newFixedThreadPool(totalThreads);
+        ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
         long startingTime = System.currentTimeMillis();
-        executorService.execute(multiplyMatrix.task3);
+        for(int i = 0; i < totalThreads; i ++)
+            executorService.submit(multiplyMatrix.task3);
+
+
         executorService.shutdown();
         executorService.awaitTermination(1, TimeUnit.MINUTES);
         long endingTime = System.currentTimeMillis();
@@ -151,6 +165,8 @@ public class Program {
                 " Matrix size: " + size +
                 " Number of threads: " + totalThreads +
                 "\n");
+
+//        printTest(multiplyMatrix);
     }
 
 
@@ -161,4 +177,18 @@ public class Program {
         writer.write(output);
         writer.close();
     }
+
+
+    public void printTest(MultiplyMatrix multiplyMatrix){
+        multiplyMatrix.printMatrix(A);
+        multiplyMatrix.printMatrix(B);
+        multiplyMatrix.printMatrix(multiplyMatrix.getResult());
+    }
+//    public String getResult(){
+//        String s = "";
+//        for (int i = 0; i < size; i ++ )
+//            for (int j = 0; j < size; j ++){
+//                s += res
+//            }
+//    }
 }

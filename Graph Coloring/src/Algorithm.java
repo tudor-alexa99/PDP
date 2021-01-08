@@ -9,9 +9,42 @@ public class Algorithm {
     ReentrantLock mutex;
     private ArrayList<Integer> colors = new ArrayList<>();
     private int colorsCount;
+    private int size;
 
-    private void generateRandom(int nodesCount) {
-        return;
+    Algorithm(int size, int colorsCount) throws InterruptedException {
+        this.matrix = new boolean[100][100];
+        this.foundSoulution = new AtomicBoolean();
+        this.foundSoulution.set(false);
+        this.mutex = new ReentrantLock();
+
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= size; j++) {
+                matrix[i][j] = false;
+            }
+        }
+
+        this.colorsCount = colorsCount;
+        this.size = size;
+
+        matrix[0][1] = true;
+        matrix[1][3] = true;
+        matrix[2][3] = true;
+        matrix[2][4] = true;
+        matrix[3][4] = true;
+
+        matrix[1][0] = true;
+        matrix[3][1] = true;
+        matrix[3][2] = true;
+        matrix[4][2] = true;
+        matrix[4][3] = true;
+
+
+    }
+
+    ArrayList<Integer> runAlgorithm() throws InterruptedException {
+        ArrayList<Integer> temp = new ArrayList<>();
+        backtracking(temp, 2, this.colorsCount, this.size);
+        return colors;
     }
 
     Boolean validColor(int node, int color, ArrayList<Integer> currentColors) {
